@@ -1,4 +1,6 @@
 // requires
+const data = require('../data/index')
+
 
 //metodos
 const usersController = {
@@ -12,7 +14,7 @@ const usersController = {
         res.render('login');
       },
       miPerfil: function(req, res, next) {
-        res.render('miPerfil');
+        res.render('miPerfil', {data: data.usuarios[0]});
       },
     registracion: function(req, res, next) {
         res.render('registracion');
