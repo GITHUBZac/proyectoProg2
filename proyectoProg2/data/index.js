@@ -12,7 +12,7 @@ const data = {
             seguidos: '1548 seguidos',
         },
         {
-            nombreUsario: '2',
+            nombre: '2',
             foto: '"https://via.placeholder.com/200x220"',
             mail: 'zaca@gmail.com',
             contrasenia: 'hola',
