@@ -15,7 +15,7 @@ const data = {
             nombreUsario: '2',
             foto: '"https://via.placeholder.com/200x220"',
             mail: 'zaca@gmail.com',
-            contraseña: 'hola',
+            contrasenia: 'hola',
             fecha: '2000-2-15',
             dni: 12345678,
             posteos: '14 posteos',
