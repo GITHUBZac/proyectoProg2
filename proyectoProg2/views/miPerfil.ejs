@@ -12,7 +12,7 @@
                 <img class="profile" src="<%= data.foto %> " alt="">
                 <div class="info-usuario">
                     <p><%= data.nombreUsario %> </p> 
-                    <a class="follow" href="/users/editarPerfil"><i class="fa-solid fa-user-gear"></i></a>
+                    <a class="follow" href="/users/editarPerfil/0"><i class="fa-solid fa-user-gear"></i></a>
                     <ul class="meta">
                         <li><%= data.posteos %> </li>
                         <li><%= data.seguidores %> </li>
@@ -21,13 +21,15 @@
                 </div>
             </section>
             <section class="bottom">
-                <% for (let i = 0, i < posteos.length, i++ ) %> 
-                <article class="post">
-                    <a href="/post/detallePost">
-                        <img src="https://via.placeholder.com/200x250" alt="">
-                        <p>Texto del post</p>
-                    </a>
-                </article>
+                <% for( let i = 0; i < posteos.length; i++ ) { %>
+                    <article class="post">
+                        <a href="/post/detallePost">
+                            <img src=<%= posteos[i].foto %>  alt="">
+                            <p><%= posteos[i].texto %> </p>
+                        </a>
+                    </article>
+                <% } %>
+                
                 
             </section>
         </div>

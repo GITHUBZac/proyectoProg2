@@ -8,7 +8,7 @@ const usersController = {
         res.render('detalleUsuario');
       },
       editarPerfil: function(req, res, next) {
-        res.render('editarPerfil');
+        res.render('editarPerfil', {data: data.usuarios, indice: req.params.id});
       },
     login: function(req, res, next) {
         res.render('login');

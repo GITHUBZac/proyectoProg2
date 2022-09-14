@@ -1,10 +1,10 @@
 const data = {
     usuarios: [
         {
-            nombreUsario: 'ZTT',
+            nombre: 'ZTT',
             foto: '"https://via.placeholder.com/1000x900"',
-            mail: '',
-            contraseña: 'hola',
+            mail: 'longe@gmail.com',
+            contrasenia: 'hola',
             fecha: '2000-2-15',
             dni: 12345678,
             posteos: '15 posteos',
@@ -14,11 +14,11 @@ const data = {
         {
             nombreUsario: '2',
             foto: '"https://via.placeholder.com/200x220"',
-            mail: '',
+            mail: 'zaca@gmail.com',
             contraseña: 'hola',
             fecha: '2000-2-15',
             dni: 12345678,
-            posteos: 14,
+            posteos: '14 posteos',
             seguidores: 120,
             seguidos: 100,
         },
