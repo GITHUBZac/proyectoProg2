@@ -1,6 +1,6 @@
 create schema proyectoProg;
 
-use proyectoRedSocial;
+use proyectoProg;
 
 create table usuarios(
 id int unsigned primary key not null auto_increment,
@@ -10,51 +10,29 @@ foto varchar(500) not null,
 contrasenia varchar(500) not null unique,
 fecha date not null,
 dni int not null,
-createdat timestamp default current_timestamp,
-updatedat timestamp default current_timestamp on update current_timestamp,
-deletedat TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+createdAt timestamp default current_timestamp,
+updatedAt timestamp default current_timestamp on update current_timestamp
 );
 
 
-use proyectoRedSocial;
 
 create table posteos(
 id int unsigned primary key not null auto_increment,
 foto varchar(500) not null,
 descripcion varchar(500) not null,
-createdat timestamp default current_timestamp,
-updatedat timestamp default current_timestamp on update current_timestamp,
-deletedat TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-
+createdAt timestamp default current_timestamp,
+updatedAt timestamp default current_timestamp on update current_timestamp,
 fkUserId int unsigned,
 foreign key (fkUserId) references usuarios (id)
 );
 
-use proyectoRedSocial;
-
 create table comentarios(
 id int unsigned primary key not null auto_increment,
 descripcion varchar(500) not null,
-
-
-
-createdat timestamp default current_timestamp,
-updatedat timestamp default current_timestamp on update current_timestamp,
-deletedat TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-
+createdAt timestamp default current_timestamp,
+updatedAt timestamp default current_timestamp on update current_timestamp,
 fkUserId int unsigned,
 foreign key (fkUserId) references usuarios (id),
-
 fkUserIdPost int unsigned,
 foreign key (fkUserIdPost) references posteos (id)
 );
-
-insert into usuarios(email, nombre, foto, contrasenia, dni)
-values ();
-
-
-insert into posteos(foto, descripcion, fkUserIdPost)
-values ();
-
-insert into comentarios(descripcion, fkUserId, fkUserIdPost)
-values ();
