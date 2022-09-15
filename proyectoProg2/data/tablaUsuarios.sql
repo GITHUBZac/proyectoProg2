@@ -48,3 +48,13 @@ foreign key (fkUserId) references usuarios (id),
 fkUserIdPost int unsigned,
 foreign key (fkUserIdPost) references posteos (id)
 );
+
+insert into usuarios(email, nombre, foto, contrasenia, dni)
+values ();
+
+
+insert into posteos(foto, descripcion, fkUserIdPost)
+values ();
+
+insert into comentarios(descripcion, fkUserId, fkUserIdPost)
+values ();
