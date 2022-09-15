@@ -199,7 +199,7 @@ const data = {
             id_usuario: 2,
             nombre: 'Lautaro Martinez',
             foto: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSc6OGPEfKYW-YSjVsc0SUuFAZ1FUgDlT2ywg&usqp=CAU",
-            comentario: 'Vamos Pulgits querido!!',
+            comentario: 'Vamos Pulgita querido!!',
         },
         {
             idPosteo: 5,
@@ -269,7 +269,7 @@ const data = {
             id_usuario: 5,
             nombre: 'Cristian Romero',
             foto: "https://s3.amazonaws.com/arc-wordpress-client-uploads/infobae-wp/wp-content/uploads/2018/06/30115405/Argentina-vs-Francia-Mundial-Rusia-2018-86.jpg",
-            comentario: 'Solta un poquito a la mujer',
+            comentario: 'Solta un poquito a la jermu',
         },
         {
             idPosteo: 5,
