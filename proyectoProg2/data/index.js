@@ -87,6 +87,95 @@ const data = {
 
     ],
 
+
+    comentarios: [
+        {
+            idPosteo: 2,
+            id: 1,
+            nombre: 'Lionel Messi',
+            foto: "https://estaticos-cdn.elperiodico.com/clip/69964ce0-68a6-4758-bef5-6503eff109e0_alta-libre-aspect-ratio_default_0.jpg",
+            comentario: 'Tremenda foto FIDE',
+        },
+        {
+            idPosteo: 3,
+            id: 1,
+            nombre: 'Lionel Messi',
+            foto: "https://estaticos-cdn.elperiodico.com/clip/69964ce0-68a6-4758-bef5-6503eff109e0_alta-libre-aspect-ratio_default_0.jpg",
+            comentario: 'Tremenda foto CUTI',
+        },
+        {
+            idPosteo: 4,
+            id: 1,
+            nombre: 'Lionel Messi',
+            foto: "https://estaticos-cdn.elperiodico.com/clip/69964ce0-68a6-4758-bef5-6503eff109e0_alta-libre-aspect-ratio_default_0.jpg",
+            comentario: 'Tremenda foto RODRI',
+        },
+        {
+            idPosteo: 4,
+            id: 1,
+            nombre: 'Lionel Messi',
+            foto: "https://estaticos-cdn.elperiodico.com/clip/69964ce0-68a6-4758-bef5-6503eff109e0_alta-libre-aspect-ratio_default_0.jpg",
+            comentario: 'Tremenda foto TORO',
+        },
+        {
+            idPosteo: 1,
+            id: 2,
+            nombre: 'Lautaro Martinez',
+            foto: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSc6OGPEfKYW-YSjVsc0SUuFAZ1FUgDlT2ywg&usqp=CAU",
+            comentario: 'Vamos Pulga!!',
+        },
+        {
+            idPosteo: 3,
+            id: 2,
+            nombre: 'Lautaro Martinez',
+            foto: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSc6OGPEfKYW-YSjVsc0SUuFAZ1FUgDlT2ywg&usqp=CAU",
+            comentario: 'Vamos Fideo!! Tremendo Gol!',
+        },
+        {
+            idPosteo: 4,
+            id: 2,
+            nombre: 'Lautaro Martinez',
+            foto: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSc6OGPEfKYW-YSjVsc0SUuFAZ1FUgDlT2ywg&usqp=CAU",
+            comentario: 'RODRRRIIIII!!',
+        },
+        {
+            idPosteo: 5,
+            id: 2,
+            nombre: 'Lautaro Martinez',
+            foto: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSc6OGPEfKYW-YSjVsc0SUuFAZ1FUgDlT2ywg&usqp=CAU",
+            comentario: 'Marcha la CUTINETA!!',
+        },
+        {
+            idPosteo: 1,
+            id: 3,
+            nombre: 'Angel Di Maria',
+            foto: "https://s3.amazonaws.com/arc-wordpress-client-uploads/infobae-wp/wp-content/uploads/2018/06/30115405/Argentina-vs-Francia-Mundial-Rusia-2018-86.jpg",
+            comentario: 'Pulga de mi vida!!!!',
+        },
+        {
+            idPosteo: 2,
+            id: 3,
+            nombre: 'Angel Di Maria',
+            foto: "https://s3.amazonaws.com/arc-wordpress-client-uploads/infobae-wp/wp-content/uploads/2018/06/30115405/Argentina-vs-Francia-Mundial-Rusia-2018-86.jpg",
+            comentario: 'GOLEADOR!',
+        },
+        {
+            idPosteo: 2,
+            id: 3,
+            nombre: 'Angel Di Maria',
+            foto: "https://s3.amazonaws.com/arc-wordpress-client-uploads/infobae-wp/wp-content/uploads/2018/06/30115405/Argentina-vs-Francia-Mundial-Rusia-2018-86.jpg",
+            comentario: 'GOLEADOR!',
+        },
+
+
+
+
+
+
+
+
+    ]
+
 }
 
 module.exports = data
