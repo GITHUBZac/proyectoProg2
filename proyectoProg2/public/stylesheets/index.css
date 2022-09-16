@@ -294,3 +294,27 @@ main {
     justify-content: space-between;
     width: 100%;
 }
+
+p{
+font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.logo{
+    font-family: 'Abril Fatface', cursive;
+}
+
+.main-header{
+    background-color: cornflowerblue;
+}
+
+.main-footer{
+    background-color: cornflowerblue;}
+
+.team{
+   font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: gold;
+}
+
+.navbar-right{
+font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
