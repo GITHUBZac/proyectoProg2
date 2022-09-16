@@ -293,7 +293,38 @@ const data = {
 
 
 
-    ]
+    ],
+
+
+    /*  metodos de busqueda por ID Posteo  */
+
+    postsById: function (idPosteo) {
+        let postEncontrado = null;
+
+        for (let i = 0; i < this.posteos.length; i++) {
+            if (this.posteos[i].idPosteo == idPosteo) {
+                postEncontrado = this.posteos[i];
+            }
+            
+            return postEncontrado
+        }
+        
+
+    },
+
+    comentariosIdByIdPosteo : function (idPosteo) {
+        let comentariosEncontrado = [];
+
+        for (let i = 0; i < this.comentarios.length; i++) {
+            if (this.comentarios[i].idPosteo == idPosteo) {
+                comentariosEncontrado.push(this.comentarios[i]);
+            }
+            
+            return comentariosEncontrado
+        }
+        
+
+    },
 
 }
 
