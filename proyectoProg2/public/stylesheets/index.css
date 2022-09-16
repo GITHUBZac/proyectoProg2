@@ -201,6 +201,8 @@ main {
     border-radius: 90%;
     padding: 1px;
     border: 2px solid chocolate;
+    height: 40px;
+    width: 40px;
 }
 .comment .text {
     font-size: 12px;
