@@ -298,21 +298,21 @@ const data = {
 
     /*  metodos de busqueda por ID Posteo  */
 
-    postsById: function (idPosteo) {
-        let postEncontrado = null;
+    postsByID: function (idPosteo) {
+        let posteoEncontrado = null;
 
         for (let i = 0; i < this.posteos.length; i++) {
             if (this.posteos[i].idPosteo == idPosteo) {
-                postEncontrado = this.posteos[i];
+                posteoEncontrado = this.posteos[i];
             }
             
-            return postEncontrado
+            return posteoEncontrado
         }
         
 
     },
 
-    comentariosIdByIdPosteo : function (idPosteo) {
+    comentarioByIdPosteo : function (idPosteo) {
         let comentariosEncontrado = [];
 
         for (let i = 0; i < this.comentarios.length; i++) {
