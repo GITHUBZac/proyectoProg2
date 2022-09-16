@@ -117,6 +117,8 @@ main {
     border-radius: 90%;
     padding: 1px;
     border: 2px solid chocolate;
+    height: 40px;
+    width: 40px;
 }
 .post-reacciones {
     display: flex;
@@ -318,3 +320,4 @@ font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 .navbar-right{
 font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
+
