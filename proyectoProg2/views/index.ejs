@@ -9,12 +9,12 @@
     <main>
         <section class="center main-content">
             
-            <% for( let i = 0; i < posteos.length; i++ ) { %>
+            <% for( let i = 0; i < listaPosteos.length; i++ ) { %>
                 <article class="post">
                     <div class="info-usuario ">
                         <img src="<%= listaPosteos[i].foto %> " alt="">
                         <h4>
-                            <a href="/users/detalleUsuario"><%= listaPosteos[i].nombre %></a>
+                            <a href="/users/detalleUsuario/<%= listaPosteos[i].foto %> "><%= listaPosteos[i].nombre %></a>
                         </h4>
                     </div>
                     <div class="post-body">
