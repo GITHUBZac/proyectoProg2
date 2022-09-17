@@ -10,7 +10,7 @@
             <section class="center main-content post">
                 <div class="info-usuario">
                     <img src="<%= posteo.foto %> " alt="">
-                    <p><a href="/users/detalleUsuario"><%= posteo.nombre %></a></p>
+                    <p><a href="/users/detalleUsuario/"><%= posteo.nombre %></a></p>
                 </div>
                 <img class="photo" src="<%= posteo.post %>" alt="">
             </section>
@@ -28,7 +28,7 @@
                             <article class="comment">
                                 <img src="<%= comentarios[i].foto %> " alt="">
                                 <section class="content">
-                                    <a class="user" href="/users/detalleUsuario"><%= comentarios[i].nombre %></a>
+                                    <a class="user" href="/users/detalleUsuario/<%= comentarios[i].id_usuario %> "><%= comentarios[i].nombre %></a>
                                     <span class="text"><%= comentarios[i].comentario %></span>
                                 </section>
                             </article>

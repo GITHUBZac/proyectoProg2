@@ -17,6 +17,7 @@ const postController = {
 
         res.render('detallePost', {posteo : postEncontrado,
                                   comentarios: comentariosEncontrado,
+                                  
               });
       }
 }
