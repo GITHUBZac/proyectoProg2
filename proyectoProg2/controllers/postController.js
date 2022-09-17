@@ -15,7 +15,9 @@ const postController = {
         let comentariosEncontrado = data.comentarioByIdPosteo(idPosteo)
         
 
-        res.render('detallePost', {posteo : postEncontrado});
+        res.render('detallePost', {posteo : postEncontrado,
+                                  comentarios: comentariosEncontrado,
+              });
       }
 }
 

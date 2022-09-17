@@ -1,5 +1,5 @@
 // requires
-const data = requiere('../data/index')
+const data = require('../data/index')
 
 
 //metodos

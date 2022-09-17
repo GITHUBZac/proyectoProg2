@@ -74,7 +74,12 @@ const data = {
             nombre: "Lionel Messi",
             foto: 'https://estaticos-cdn.elperiodico.com/clip/69964ce0-68a6-4758-bef5-6503eff109e0_alta-libre-aspect-ratio_default_0.jpg',
             texto: 'Foto 1',
-            post: 'https://s.yimg.com/ny/api/res/1.2/HznAPEj0pALjSDoJvIZbbA--/YXBwaWQ9aGlnaGxhbmRlcjt3PTY0MDtoPTY0MA--/https://s.yimg.com/uu/api/res/1.2/bOfEcq9vz.qsO.EPs5jZpQ--~B/aD03OTA7dz03OTA7YXBwaWQ9eXRhY2h5b24-/https://media.zenfs.com/es/iprofesional_650/d136ca4f47faeb3c2a21f5e1eac21628'
+            post: 'https://s.yimg.com/ny/api/res/1.2/HznAPEj0pALjSDoJvIZbbA--/YXBwaWQ9aGlnaGxhbmRlcjt3PTY0MDtoPTY0MA--/https://s.yimg.com/uu/api/res/1.2/bOfEcq9vz.qsO.EPs5jZpQ--~B/aD03OTA7dz03OTA7YXBwaWQ9eXRhY2h5b24-/https://media.zenfs.com/es/iprofesional_650/d136ca4f47faeb3c2a21f5e1eac21628',
+            comentarios: {
+                idUsuarios: 1,
+                nombreUsuario: 'Lionel',
+                texto: 'buenisimo'
+            }
         },
 
         {
@@ -83,7 +88,12 @@ const data = {
             nombre: "Lionel Messi",
             foto: 'https://estaticos-cdn.elperiodico.com/clip/69964ce0-68a6-4758-bef5-6503eff109e0_alta-libre-aspect-ratio_default_0.jpg',
             texto: 'Foto 2',
-            post: 'https://i.pinimg.com/564x/08/4a/31/084a31e43f4ff868084619388e0970b0.jpg'
+            post: 'https://i.pinimg.com/564x/08/4a/31/084a31e43f4ff868084619388e0970b0.jpg',
+            comentarios: {
+                idUsuarios: 1,
+                nombreUsuario: 'Lionel',
+                texto: 'buenisimo'
+            }
         },
 
         {
@@ -92,7 +102,12 @@ const data = {
             nombre: "Lautaro Martinez",
             foto: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSc6OGPEfKYW-YSjVsc0SUuFAZ1FUgDlT2ywg&usqp=CAU',
             texto: 'Foto 3',
-            post: 'https://www.deporfama.com/asset/thumbnail,992,558,center,center//media/deporfama/images/2021/02/02/2021020208371848465.jpg'
+            post: 'https://www.deporfama.com/asset/thumbnail,992,558,center,center//media/deporfama/images/2021/02/02/2021020208371848465.jpg',
+            comentarios: {
+                idUsuarios: 1,
+                nombreUsuario: 'Lionel',
+                texto: 'buenisimo'
+            }
 
         },
 
@@ -102,7 +117,12 @@ const data = {
             nombre: "Lautaro Martinez",
             foto: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSc6OGPEfKYW-YSjVsc0SUuFAZ1FUgDlT2ywg&usqp=CAU',
             texto: 'Foto 4',
-            post: 'https://static.eldiario.es/clip/625b3896-1b85-4a89-9b93-d9e279534d02_16-9-discover-aspect-ratio_default_0.jpg'
+            post: 'https://static.eldiario.es/clip/625b3896-1b85-4a89-9b93-d9e279534d02_16-9-discover-aspect-ratio_default_0.jpg',
+            comentarios: {
+                idUsuarios: 1,
+                nombreUsuario: 'Lionel',
+                texto: 'buenisimo'
+            }
 
         },
         {
@@ -111,7 +131,12 @@ const data = {
             nombre: "Angel Di Maria",
             foto: 'https://s3.amazonaws.com/arc-wordpress-client-uploads/infobae-wp/wp-content/uploads/2018/06/30115405/Argentina-vs-Francia-Mundial-Rusia-2018-86.jpg',
             texto: 'Foto 5',
-            post: 'https://e00-ar-marca.uecdn.es/claro/assets/multimedia/imagenes/2022/06/06/16545234672806.jpg'
+            post: 'https://e00-ar-marca.uecdn.es/claro/assets/multimedia/imagenes/2022/06/06/16545234672806.jpg',
+            comentarios: {
+                idUsuarios: 1,
+                nombreUsuario: 'Lionel',
+                texto: 'buenisimo'
+            }
 
         },
 
@@ -121,7 +146,12 @@ const data = {
             nombre: "Angel Di Maria",
             foto: 'https://s3.amazonaws.com/arc-wordpress-client-uploads/infobae-wp/wp-content/uploads/2018/06/30115405/Argentina-vs-Francia-Mundial-Rusia-2018-86.jpg',
             texto: 'Foto 6',
-            post: 'https://tntsports.com.ar/__export/1650121047459/sites/tntsports/img/2022/04/16/dimariaok.png_2144282214.png'
+            post: 'https://tntsports.com.ar/__export/1650121047459/sites/tntsports/img/2022/04/16/dimariaok.png_2144282214.png',
+            comentarios: {
+                idUsuarios: 1,
+                nombreUsuario: 'Lionel',
+                texto: 'buenisimo'
+            }
         },
 
         {
@@ -130,7 +160,12 @@ const data = {
             nombre: "Rodrigo De Paul",
             foto: 'https://images.ole.com.ar/2021/11/16/yKKpjQujC_2000x1500__1.jpg',
             texto: 'Foto 7',
-            post:'https://cloudfront-us-east-1.images.arcpublishing.com/infobae/VT4N7DR7MVFP3NCQK4LWJENJAU.jpg'
+            post:'https://cloudfront-us-east-1.images.arcpublishing.com/infobae/VT4N7DR7MVFP3NCQK4LWJENJAU.jpg',
+            comentarios: {
+                idUsuarios: 1,
+                nombreUsuario: 'Lionel',
+                texto: 'buenisimo'
+            }
         },
 
         {
@@ -139,7 +174,12 @@ const data = {
             nombre:"Rodrigo De Paul",
             foto: 'https://images.ole.com.ar/2021/11/16/yKKpjQujC_2000x1500__1.jpg',
             texto: 'Foto 8',
-            post:'https://tn.com.ar/resizer/djRoaghiCkemAXkJ9UiM0ZQ4rrs=/767x0/smart/cloudfront-us-east-1.images.arcpublishing.com/artear/AOJGZUL465BAHEZZGDQZ2UU4QE.jpg'
+            post:'https://tn.com.ar/resizer/djRoaghiCkemAXkJ9UiM0ZQ4rrs=/767x0/smart/cloudfront-us-east-1.images.arcpublishing.com/artear/AOJGZUL465BAHEZZGDQZ2UU4QE.jpg',
+            comentarios: {
+                idUsuarios: 1,
+                nombreUsuario: 'Lionel',
+                texto: 'buenisimo'
+            }
 
         },
         {
@@ -148,7 +188,12 @@ const data = {
             nombre: "Cristian Romero",
             foto: 'https://images.ole.com.ar/2021/07/12/3tMEaKvze_340x340__1.jpg',
             texto: 'Foto 9',
-            post:'https://www.lavoz.com.ar/resizer/5o8MhazQOUKj3oZmMMROhvflrCg=/1023x682/smart/cloudfront-us-east-1.images.arcpublishing.com/grupoclarin/2W726LTDDZB2HG53XB6LOIJO5Y.jpg'
+            post:'https://www.lavoz.com.ar/resizer/5o8MhazQOUKj3oZmMMROhvflrCg=/1023x682/smart/cloudfront-us-east-1.images.arcpublishing.com/grupoclarin/2W726LTDDZB2HG53XB6LOIJO5Y.jpg',
+            comentarios: {
+                idUsuarios: 1,
+                nombreUsuario: 'Lionel',
+                texto: 'buenisimo'
+            }
         },
 
         {
@@ -157,7 +202,12 @@ const data = {
             nombre: "Cristian Romero",
             foto: 'https://images.ole.com.ar/2021/07/12/3tMEaKvze_340x340__1.jpg',
             texto: 'Foto 10',
-            post:'https://tn.com.ar/resizer/pY2iY2VUif5dw2gSBQHVSKZwILQ=/arc-anglerfish-arc2-prod-artear/public/DCRNTR7E3PNCTHJU7N4AL275M4.jpg'
+            post:'https://tn.com.ar/resizer/pY2iY2VUif5dw2gSBQHVSKZwILQ=/arc-anglerfish-arc2-prod-artear/public/DCRNTR7E3PNCTHJU7N4AL275M4.jpg',
+            comentarios: {
+                idUsuarios: 1,
+                nombreUsuario: 'Lionel',
+                texto: 'buenisimo'
+            }
         }
 
 
@@ -306,9 +356,9 @@ const data = {
                 posteoEncontrado = this.posteos[i];
             }
             
-            return posteoEncontrado
+            
         }
-        
+        return posteoEncontrado
 
     },
 

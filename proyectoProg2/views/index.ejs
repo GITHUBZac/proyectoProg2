@@ -18,8 +18,8 @@
                         </h4>
                     </div>
                     <div class="post-body">
-                        <a href="/post/detallePost">
-                            <img src="" alt="">
+                        <a href="/post/detallePost/<%= listaPosteos[i].idPosteo %> ">
+                            <img src="<%= listaPosteos[i].post %>" alt="">
                         </a>
                     </div>
                     <ul class="post-reacciones">
@@ -34,13 +34,10 @@
                         <h4>Comentarios</h4>
                         <ul>
                             <li>
-                                <a href="/users/detalleUsuario">Usuario</a>
-                                <span>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Commodi</span>
+                                <a href="/users/detalleUsuario/<%= listaPosteos[i].comentarios.idUsuarios %> "><%= listaPosteos[i].comentarios.nombreUsuario%> </a>
+                                <span><%= listaPosteos[i].comentarios.texto%></span>
                             </li>
-                            <li>
-                                <a href="/users/detalleUsuario">Usuario</a>
-                                <span>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Commodi</span>
-                            </li>
+                            
                             <a href="/post/detallePost">Ver más...</a>
                         </ul>
                     </div>
