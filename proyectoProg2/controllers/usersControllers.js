@@ -29,8 +29,7 @@ const usersController = {
         
         
         res.render('detalleUsuario',{posteo : postEncontrado,
-          comentarios: comentariosEncontrado, seguidos: seguidosEncontrado,
-          foto: fotoEncontrada,
+          comentarios: comentariosEncontrado, 
           
 });
         
