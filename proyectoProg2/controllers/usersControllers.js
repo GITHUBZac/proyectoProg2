@@ -4,9 +4,6 @@ const data = require('../data/index')
 
 //metodos
 const usersController = {
-    detalleUsuario: function(req, res, next) {
-        res.render('detalleUsuario');
-      },
       editarPerfil: function(req, res, next) {
         res.render('editarPerfil', {data: data.usuarios, indice: req.params.id});
       },
@@ -19,6 +16,25 @@ const usersController = {
     registracion: function(req, res, next) {
         res.render('registracion');
       },
+
+      detalleUsuario: function(req, res, next) {
+        let idPosteo = req.params.id;
+
+        let postEncontrado = data.postsByID(idPosteo);
+
+        let comentariosEncontrado = data.comentarioByIdPosteo(idPosteo)
+
+        let seguidosEncontrado = data.usuarios.seguidos
+        
+        res.render('detalleUsuario',{posteo : postEncontrado,
+          comentarios: comentariosEncontrado, seguidos: seguidosEncontrado,
+          
+});
+        
+      },
+
+
+
 }
 
 //exportacion
