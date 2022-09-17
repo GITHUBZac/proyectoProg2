@@ -35,7 +35,7 @@ header {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     padding: 10px 10px;
     border-bottom: 1px solid #ddd;
 }
@@ -83,6 +83,7 @@ main {
     align-items: center;
     padding: 100px 0;
     min-height: 600px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 .main-content {
@@ -103,7 +104,8 @@ main {
 .info-usuario,
 .post-reacciones,
 .post-comentarios {
-    padding: 10px 15px
+    padding: 10px 15px;
+    background-color: cornflowerblue;
 }
 .info-usuario {
     display: flex;
@@ -150,6 +152,7 @@ main {
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
 .main-footer {
     position: fixed;
