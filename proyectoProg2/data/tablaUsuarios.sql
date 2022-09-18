@@ -55,5 +55,42 @@ INSERT INTO posteos VALUES (DEFAULT, 'https://tn.com.ar/resizer/pY2iY2VUif5dw2gS
 
 /* CREAR 10 REGISTROS DE COMENTARIOS                   			ID usuario existente  | | ID post existente  | |*/
 INSERT INTO comentarios VALUES (DEFAULT, 'Que fachero mi goleador!', DEFAULT, DEFAULT,   1,  3);
+INSERT INTO comentarios VALUES (DEFAULT, 'Felicitaciones pulga querido. Que lindo verte asi', DEFAULT, DEFAULT,   2,  1);
+INSERT INTO comentarios VALUES (DEFAULT, 'Terrible burga leito... aflojale que tenes que llegar bien al mundial jeje', DEFAULT, DEFAULT,   3,  1);
+INSERT INTO comentarios VALUES (DEFAULT, 'Crack!! Como te quiero!!! Dirigime la vida', DEFAULT, DEFAULT,   4,  1);
+INSERT INTO comentarios VALUES (DEFAULT, 'Felicitaciones Leo. A seguir asi', DEFAULT, DEFAULT,   5,  1);
+INSERT INTO comentarios VALUES (DEFAULT, 'EEEE tobogan de piojoooo', DEFAULT, DEFAULT,   3,  2);
+INSERT INTO comentarios VALUES (DEFAULT, 'Juju alguien se pelo', DEFAULT, DEFAULT,   2,  2);
+INSERT INTO comentarios VALUES (DEFAULT, 'Que bien te queda la pelada LEOOOO', DEFAULT, DEFAULT,   4,  2);
+INSERT INTO comentarios VALUES (DEFAULT, 'Buena pelada fiera', DEFAULT, DEFAULT,   5,  2);
+INSERT INTO comentarios VALUES (DEFAULT, 'Que fachero mi goleador', DEFAULT, DEFAULT,   1,  3);
+INSERT INTO comentarios VALUES (DEFAULT, 'Sacate la pollera gobernado!', DEFAULT, DEFAULT,   3,  3);
+INSERT INTO comentarios VALUES (DEFAULT, 'JUJU como juega esteeee', DEFAULT, DEFAULT,   4,  3);
+INSERT INTO comentarios VALUES (DEFAULT, 'TORO!', DEFAULT, DEFAULT,   5,  3);
+INSERT INTO comentarios VALUES (DEFAULT, 'CAMPEONES!! Que alegria!', DEFAULT, DEFAULT,   1,  4);
+INSERT INTO comentarios VALUES (DEFAULT, 'SIIII TORITOOOO', DEFAULT, DEFAULT,   3,  4);
+INSERT INTO comentarios VALUES (DEFAULT, 'DALE CHEEE! VAMOS POR EL MUNDIAL! TTT', DEFAULT, DEFAULT,   4,  4);
+INSERT INTO comentarios VALUES (DEFAULT, 'Buena torero!', DEFAULT, DEFAULT,   5,  4);
+INSERT INTO comentarios VALUES (DEFAULT, 'El corazon de mi vida!', DEFAULT, DEFAULT,   1,  5);
+INSERT INTO comentarios VALUES (DEFAULT, 'TE AMO!', DEFAULT, DEFAULT,   2,  5);
+INSERT INTO comentarios VALUES (DEFAULT, 'PICAME LA VIDA', DEFAULT, DEFAULT,   4,  5);
+INSERT INTO comentarios VALUES (DEFAULT, 'Vamos fide!', DEFAULT, DEFAULT,   5,  5);
+INSERT INTO comentarios VALUES (DEFAULT, 'que recuerdo! aguante newells', DEFAULT, DEFAULT,   1,  6);
+INSERT INTO comentarios VALUES (DEFAULT, 'CARBONEEEE', DEFAULT, DEFAULT,   2,  6);
+INSERT INTO comentarios VALUES (DEFAULT, 'JAJAJA que bien te hizo europa!', DEFAULT, DEFAULT,   4,  6);
+INSERT INTO comentarios VALUES (DEFAULT, 'Que chico eras fide. Saludos!', DEFAULT, DEFAULT,   5,  6);
+INSERT INTO comentarios VALUES (DEFAULT, 'Buena rodri! Soltala un poco a la Tini', DEFAULT, DEFAULT,   1,  7);
+INSERT INTO comentarios VALUES (DEFAULT, 'Deja de afanar', DEFAULT, DEFAULT,   2,  7);
+INSERT INTO comentarios VALUES (DEFAULT, 'Sacate la pollera gobernado!', DEFAULT, DEFAULT,   3,  7);
+INSERT INTO comentarios VALUES (DEFAULT, 'Buena rodri!', DEFAULT, DEFAULT,   5,  7);
+INSERT INTO comentarios VALUES (DEFAULT, 'Basta gobernado! Concentrate en el mundial', DEFAULT, DEFAULT,   1,  8);
+INSERT INTO comentarios VALUES (DEFAULT, 'Larga la POLLERA! TTT', DEFAULT, DEFAULT,   2,  8);
+INSERT INTO comentarios VALUES (DEFAULT, 'pollerudo. toma nota Scaloni!', DEFAULT, DEFAULT,   3,  8);
+INSERT INTO comentarios VALUES (DEFAULT, 'Rodri, concentrate en el mundial por favor.', DEFAULT, DEFAULT,   5,  8);
+INSERT INTO comentarios VALUES (DEFAULT, 'ANIMAL! TE AMO', DEFAULT, DEFAULT,   1,  10);
+INSERT INTO comentarios VALUES (DEFAULT, 'MIRA LO QUE SOS TOOOROOOOO', DEFAULT, DEFAULT,   2,  10);
+INSERT INTO comentarios VALUES (DEFAULT, 'Yo me subi a la cutineta, y ustedes?', DEFAULT, DEFAULT,   3,  10);
+INSERT INTO comentarios VALUES (DEFAULT, 'Defendeme siempre!', DEFAULT, DEFAULT,   4,  10);
+
 
 
