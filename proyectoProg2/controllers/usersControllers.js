@@ -28,13 +28,11 @@ const usersController = {
 
         let usuario = data.usuarios.find(usuario=>usuario.id_usuario==idPosteo);
 
- 
-        
 
-        
         res.render('detalleUsuario',{posteo : postEncontrado,
           comentarios: comentariosEncontrado, 
-          usuario: usuario
+          usuario: usuario,
+
           
 });
         

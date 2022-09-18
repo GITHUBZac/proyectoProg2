@@ -8,9 +8,9 @@ const data = {
             contrasenia: 'MESSI',
             fecha: '1987-6-24',
             dni: 10193007,
-            posteos: '150 posteos',
+            posteos: '2 posteos',
             seguidores: '200 seguidores',
-            seguidos: '1007 seguidos',
+            seguidos: '107 seguidos',
         },
 
         {
@@ -21,8 +21,8 @@ const data = {
             contrasenia: 'toro',
             fecha: '1997-8-22',
             dni: 10072002,
-            posteos: '168 posteos',
-            seguidores: '200054 seguidores',
+            posteos: '2 posteos',
+            seguidores: '200 seguidores',
             seguidos: '984 seguidos',
         },
 
@@ -34,8 +34,8 @@ const data = {
             contrasenia: 'fideo.corazon',
             fecha: '1988-2-14',
             dni: 12345678,
-            posteos: '300 posteos',
-            seguidores: '20002430 seguidores',
+            posteos: '2 posteos',
+            seguidores: '101 seguidores',
             seguidos: '1548 seguidos',
         },
 
@@ -47,9 +47,9 @@ const data = {
             contrasenia: 'TripleT',
             fecha: '1994-5-24',
             dni: 87654321,
-            posteos: '183 posteos',
-            seguidores: '2503050 seguidores',
-            seguidos: '3875 seguidos',
+            posteos: '2 posteos',
+            seguidores: '143 seguidores',
+            seguidos: '598 seguidos',
         },
 
         {
@@ -60,9 +60,9 @@ const data = {
             contrasenia: 'Cutineta1',
             fecha: '1998-4-27',
             dni: 45678900,
-            posteos: '875 posteos',
-            seguidores: '260130310 seguidores',
-            seguidos: '15448 seguidos',
+            posteos: '2 posteos',
+            seguidores: '289 seguidores',
+            seguidos: '98 seguidos',
         },
 
     ],
@@ -557,17 +557,7 @@ const data = {
         return comentariosEncontrado
     },
 
-    usuariosByIdPosteo : function (idPosteo) {
-        let usuarioEncontrado = [];
-        for (let i = 0; i < this.usuarios.length; i++) {
-            if (this.usuarios[i].id_usuario == idPosteo) {
-                usuarioEncontrado.push(this.usuarios[i])
-            }
-            
-        }
-
-        return usuarioEncontrado
-    }
+    
 
 }
 
