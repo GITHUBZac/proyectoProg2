@@ -54,6 +54,6 @@ INSERT INTO posteos VALUES (DEFAULT, 'https://tn.com.ar/resizer/pY2iY2VUif5dw2gS
 
 
 /* CREAR 10 REGISTROS DE COMENTARIOS                   			ID usuario existente  | | ID post existente  | |*/
-INSERT INTO comentarios VALUES (DEFAULT, 'Muy buena foto tomaste', DEFAULT, DEFAULT,   1, 					  1);
+INSERT INTO comentarios VALUES (DEFAULT, 'Que fachero mi goleador!', DEFAULT, DEFAULT,   1,  3);
 
 
