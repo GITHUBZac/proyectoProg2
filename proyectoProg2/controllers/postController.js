@@ -12,11 +12,14 @@ const postController = {
 
         let postEncontrado = data.postsByID(idPosteo);
 
-        let comentariosEncontrado = data.comentarioByIdPosteo(idPosteo)
+        let comentariosEncontrado = data.comentarioByIdPosteo(idPosteo);
+
+        let posteoEncontrado = data.posteosByIdPosteo(idPosteo)
         
 
         res.render('detallePost', {posteo : postEncontrado,
                                   comentarios: comentariosEncontrado,
+                                  posteos: posteoEncontrado
                                   
               });
       }
