@@ -90,6 +90,7 @@ const data = {
             nombre: "Lionel Messi",
             foto: 'https://estaticos-cdn.elperiodico.com/clip/69964ce0-68a6-4758-bef5-6503eff109e0_alta-libre-aspect-ratio_default_0.jpg',
             texto: 'Una en Paris',
+
             post: 'https://i.pinimg.com/564x/08/4a/31/084a31e43f4ff868084619388e0970b0.jpg',
             comentarios: {
                 idUsuarios: 3,
@@ -119,6 +120,7 @@ const data = {
             nombre: "Lautaro Martinez",
             foto: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSc6OGPEfKYW-YSjVsc0SUuFAZ1FUgDlT2ywg&usqp=CAU',
             texto: 'Con la mas linda',
+
             post: 'https://static.eldiario.es/clip/625b3896-1b85-4a89-9b93-d9e279534d02_16-9-discover-aspect-ratio_default_0.jpg',
             comentarios: {
                 idUsuarios: 5,
@@ -130,7 +132,7 @@ const data = {
         {
             id_usuario:3,
             idPosteo : 5,
-            nombre: "Angel Di Maria",
+            nombre: "QUE ALEGRIA",
             foto: 'https://s3.amazonaws.com/arc-wordpress-client-uploads/infobae-wp/wp-content/uploads/2018/06/30115405/Argentina-vs-Francia-Mundial-Rusia-2018-86.jpg',
             texto: 'Te lo dedico a vos mi amor',
             post: 'https://e00-ar-marca.uecdn.es/claro/assets/multimedia/imagenes/2022/06/06/16545234672806.jpg',
@@ -204,6 +206,7 @@ const data = {
             nombre: "Cristian Romero",
             foto: 'https://images.ole.com.ar/2021/07/12/3tMEaKvze_340x340__1.jpg',
             texto: 'Demostrando quien manda, que lindo ser argentino',
+
             post:'https://tn.com.ar/resizer/pY2iY2VUif5dw2gSBQHVSKZwILQ=/arc-anglerfish-arc2-prod-artear/public/DCRNTR7E3PNCTHJU7N4AL275M4.jpg',
             comentarios: {
                 idUsuarios: 4,
@@ -552,6 +555,20 @@ const data = {
         }
         
         return comentariosEncontrado
+    },
+
+    posteosByIdPosteo : function (idPosteo) {
+        let posteosEncontrados = null;
+
+        for (let i = 0; i < this.usuarios.length; i++) {
+            if (this.usuarios[i].idPosteo == idPosteo) {
+                posteosEncontrados.push(this.usuarios[i]);
+            }
+            
+            
+        }
+        
+        return posteosEncontrados
     },
 
 }

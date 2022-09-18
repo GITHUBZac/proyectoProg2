@@ -2,6 +2,7 @@
 const data = require('../data/index')
 
 
+
 //metodos
 const usersController = {
       editarPerfil: function(req, res, next) {
@@ -24,10 +25,10 @@ const usersController = {
 
         let comentariosEncontrado = data.comentarioByIdPosteo(idPosteo)
 
-        let seguidosEncontrado = data.usuarios.seguidos
+
         
         res.render('detalleUsuario',{posteo : postEncontrado,
-          comentarios: comentariosEncontrado, seguidos: seguidosEncontrado,
+          comentarios: comentariosEncontrado, 
           
 });
         
