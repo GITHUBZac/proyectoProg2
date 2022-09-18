@@ -11,7 +11,7 @@
             <section class="top main-content">
                 <img class="profile" src="<%= data.foto %> " alt="">
                 <div class="info-usuario">
-                    <p><%= data.nombreUsario %> </p> 
+                    <p><%= data.nombre %> </p> 
                     <a class="follow" href="/users/editarPerfil/"><i class="fa-solid fa-user-gear"></i></a>
                     <ul class="meta">
                         <li><%= data.posteos %> </li>
@@ -23,8 +23,8 @@
             <section class="bottom">
                 <article class="post">
                     <a href="/post/detallePost">
-                        <img src="https://via.placeholder.com/200x250" alt="">
-                        <p>Texto del post</p>
+                        <img src="<%= posteos[0].post %> " alt="">
+                        <p><%= posteos[0].texto %> </p>
                     </a>
                 </article>
                 
