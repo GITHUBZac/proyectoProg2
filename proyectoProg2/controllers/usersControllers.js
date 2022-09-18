@@ -25,8 +25,7 @@ const usersController = {
 
         let comentariosEncontrado = data.comentarioByIdPosteo(idPosteo)
 
-        
-        
+
         
         res.render('detalleUsuario',{posteo : postEncontrado,
           comentarios: comentariosEncontrado, 
