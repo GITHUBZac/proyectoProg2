@@ -9,30 +9,31 @@
     <main>
         <div class="user-detail container">
             <section class="top main-content">
-                <img class="profile" src="<%= posteo.foto %> " alt="">
+                <img class="profile" src="<%= usuario.foto %> " alt="">
                 <div class="info-usuario">
-                    <p><%= posteo.nombre %> </p> 
+                    <p><%= usuario.nombre %> </p> 
                     <a class="follow" href="">seguir</a>
                     <ul class="meta">
-                        <li>  </li>
-                        <li>  </li>
-                        <li>  </li>
+                        <li> <%= usuario.posteos %>  </li>
+                        <li> <%= usuario.seguidos %>  </li>
+                        <li> <%= usuario.seguidores %>  </li>
                     </ul>
                 </div>
             </section>
 
-
-            
             <section class="bottom">
-                <% for (let i =0, i<posteos.length, i++){ %> 
+                <% for (let i =0;i<posteo.length;i++){ %> 
                 <article class="post">
-                    <a href="/posts/detallePost/:id">
-                        <img src="<%= posteos[i].foto %> " alt="">
+                    <a href="/posts/detallePost">
+                        <img src="<%= posteo[i].post %> " alt="">
                     </a>
+                    
                 </article>
                 <% } %> 
                 
             </section>
+            
+            
         </div>
     </main>
 

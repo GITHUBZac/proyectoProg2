@@ -1,5 +1,5 @@
 // requires
-const { usuariosByIdPosteo } = require('../data/index');
+const { usuariosByIdPosteo, usuarios } = require('../data/index');
 const data = require('../data/index')
 
 
@@ -24,15 +24,17 @@ const usersController = {
 
         let postEncontrado = data.postsByID(idPosteo);
 
-        let comentariosEncontrado = data.comentarioByIdPosteo(idPosteo)
+        let comentariosEncontrado = data.comentarioByIdPosteo(idPosteo);
 
-        let usuarioEncontrado = usuariosByIdPosteo
+        let usuario = data.usuarios.find(usuario=>usuario.id_usuario==idPosteo);
 
+ 
+        
 
         
         res.render('detalleUsuario',{posteo : postEncontrado,
           comentarios: comentariosEncontrado, 
-          usuarios: usuarioEncontrado,
+          usuario: usuario
           
 });
         

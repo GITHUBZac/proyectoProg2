@@ -132,7 +132,7 @@ const data = {
         {
             id_usuario:3,
             idPosteo : 5,
-            nombre: "QUE ALEGRIA",
+            nombre: "Angel Di Maria",
             foto: 'https://s3.amazonaws.com/arc-wordpress-client-uploads/infobae-wp/wp-content/uploads/2018/06/30115405/Argentina-vs-Francia-Mundial-Rusia-2018-86.jpg',
             texto: 'Te lo dedico a vos mi amor',
             post: 'https://e00-ar-marca.uecdn.es/claro/assets/multimedia/imagenes/2022/06/06/16545234672806.jpg',
