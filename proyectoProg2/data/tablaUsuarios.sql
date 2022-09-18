@@ -90,7 +90,7 @@ INSERT INTO comentarios VALUES (DEFAULT, 'Rodri, concentrate en el mundial por f
 INSERT INTO comentarios VALUES (DEFAULT, 'ANIMAL! TE AMO', DEFAULT, DEFAULT,   1,  10);
 INSERT INTO comentarios VALUES (DEFAULT, 'MIRA LO QUE SOS TOOOROOOOO', DEFAULT, DEFAULT,   2,  10);
 INSERT INTO comentarios VALUES (DEFAULT, 'Yo me subi a la cutineta, y ustedes?', DEFAULT, DEFAULT,   3,  10);
-INSERT INTO comentarios VALUES (DEFAULT, 'DEFENDEME LA VIDA, ANIMAL!', DEFAULT, DEFAULT,   4,  10);
+INSERT INTO comentarios VALUES (DEFAULT, 'Defendeme siempre!', DEFAULT, DEFAULT,   4,  10);
 
 
 
