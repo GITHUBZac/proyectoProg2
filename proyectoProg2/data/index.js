@@ -557,19 +557,17 @@ const data = {
         return comentariosEncontrado
     },
 
-    posteosByIdPosteo : function (idPosteo) {
-        let posteosEncontrados = null;
-
+    usuariosByIdPosteo : function (idPosteo) {
+        let usuarioEncontrado = [];
         for (let i = 0; i < this.usuarios.length; i++) {
-            if (this.usuarios[i].idPosteo == idPosteo) {
-                posteosEncontrados.push(this.usuarios[i]);
+            if (this.usuarios[i].id_usuario == idPosteo) {
+                usuarioEncontrado.push(this.usuarios[i])
             }
             
-            
         }
-        
-        return posteosEncontrados
-    },
+
+        return usuarioEncontrado
+    }
 
 }
 
