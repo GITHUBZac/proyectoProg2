@@ -16,20 +16,27 @@ module.exports = function (sequelize, dataTypes){
             type: dataTypes.DATE,
             allowNull: true,
         },
-        name: {
+        nombre: {
             type: dataTypes.STRING
         },
-        email: {
+        mail: {
             type: dataTypes.STRING
         },
-        password: {
-            type: dataTypes.STRING
-        },
-        remember_token: {
+        contrasenia: {
             type: dataTypes.STRING
         },
         img: {
             type: dataTypes.STRING
+        },
+        fecha :{
+            type: dataTypes.DATE
+        },
+        dni :{
+            type: dataTypes.INTEGER
+        },
+        deleatedat:{
+            type: dataTypes.DATE,
+            allowNull:true,
         }
 
     }
