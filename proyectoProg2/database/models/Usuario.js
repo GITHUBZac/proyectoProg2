@@ -1,12 +1,13 @@
 module.exports = function (sequelize, dataTypes){
     
-    let alias = 'User'; //Este alias se busca como nombre en de la tabla en plural dentro de la base de datos.
+    let alias = 'usuario'; //Este alias se busca como nombre en de la tabla en plural dentro de la base de datos.
 
     let cols = {
         id: {
             autoIncrement: true,
             primaryKey: true,
-            type: dataTypes.INTEGER
+            type: dataTypes.INTEGER,
+            allowNull:false,
         },
         created_at : {
             type: dataTypes.DATE,
@@ -17,38 +18,41 @@ module.exports = function (sequelize, dataTypes){
             allowNull: true,
         },
         nombre: {
-            type: dataTypes.STRING
+            type: dataTypes.STRING,
+            allowNull:false,
         },
         mail: {
-            type: dataTypes.STRING
+            type: dataTypes.STRING,
+            allowNull:false
         },
         contrasenia: {
-            type: dataTypes.STRING
+            type: dataTypes.STRING,
+            allowNull:false,
         },
         img: {
-            type: dataTypes.STRING
+            type: dataTypes.STRING,
+            allowNull:false,
         },
         fecha :{
-            type: dataTypes.DATE
+            type: dataTypes.DATE,
+            allowNull:false,
         },
         dni :{
-            type: dataTypes.INTEGER
-        },
-        deleatedat:{
-            type: dataTypes.DATE,
-            allowNull:true,
+            type: dataTypes.INTEGER,
+            allowNull:false,
+
         }
 
     }
 
     let config = {
-        tableName : "users",
+        tableName : "usuario",
         timestamps:true, //Aclareción en caso de no explicitar created_at, deleted_at y updated_at
         underscored: true, //Aclareción en caso que los timestamps usen guiones bajos en lugar de camelCase.
     };
 
-    const User = sequelize.define(alias, cols, config);
+    const usuario = sequelize.define(alias, cols, config);
 
-    return User;
+    return usuario;
 
 }
