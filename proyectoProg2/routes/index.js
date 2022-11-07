@@ -4,6 +4,6 @@ var indexController = require('../controllers/indexController')
 
 /* GET home page. */
 router.get('/', indexController.index );
-router.get('/busqueda/:id', indexController.busqueda );
+router.get('/busqueda', indexController.busqueda );
 
 module.exports = router;

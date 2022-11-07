@@ -9,7 +9,34 @@
     <main>
         <section class="center main-content">
         <h1>Editar perfil</h1>
-        <p>Crear el formulario para modificar los datos de perfil de un usuario.</p>
+        <form action="/users/miPerfil" method="get">
+            <div>
+                <label for="email">e-mail</label>
+                <input type="email" name="email" value="<%= data[indice].mail %> ">
+            </div>
+            <div>
+                <label for="username">username</label>
+                <input type="text" name="username" value="<%= data[indice].nombre %> ">
+            </div>
+            <div>
+                <label for="password">Contraseña</label>
+                <input type="password" name="password" value="<%= data[indice].contrasenia %>"  >
+            </div>
+            <div>
+                <label for="foto">Foto de perfil</label>
+                <input type="text" name="foto"  value="<%= data[indice].foto %>">
+            </div>
+            <div>
+                <label for="fecha">fecha de nacimiento</label>
+                <input type="date" name="fecha"  value="<%= data[indice].fecha %>" >
+            </div>
+            <div>
+                <label for="DNI">DNI</label>
+                <input type="number" name="DNI"  value="<%= data[indice].dni %>" >
+            </div>
+
+            <button type="submit">Finaliza el registro</button>
+        </form>
         </section>
     </main>
 
