@@ -8,6 +8,7 @@
 
     <main>
         <section class="center main-content">
+<<<<<<< HEAD
             <article class="post">
                 <div class="info-usuario ">
                     <img src="https://via.placeholder.com/40" alt="">
@@ -148,6 +149,55 @@
                     </ul>
                 </div>
             </article>
+=======
+            
+            <% for( let i = 0; i < listaPosteos.length; i++ ) { %>
+                <article class="post">
+                    <div class="info-usuario ">
+                        <img src="<%= listaPosteos[i].foto %> " alt="">
+                        <h4>
+                            <a href="/users/detalleUsuario/<%= listaPosteos[i].id_usuario %> "><%= listaPosteos[i].nombre %></a>
+                        </h4>
+                    </div>
+                    <div class="post-body">
+                        <a href="/post/detallePost/<%= listaPosteos[i].idPosteo %> ">
+                            <img src="<%= listaPosteos[i].post %>" alt="">
+                        </a>
+                    </div>
+                    <ul class="post-reacciones">
+                        <li>
+                            <i class="fa-regular fa-heart"></i>
+                        </li>
+                        <li>
+                            <i class="fa-regular fa-comment"></i>
+                        </li>
+                    </ul>
+                    <div class="post-comentarios">
+                        <h4>Comentarios</h4>
+                        <ul>
+                            <li>
+                                <a href="/users/detalleUsuario/<%= listaPosteos[i].comentarios.idUsuarios %> "><%= listaPosteos[i].comentarios.nombreUsuario%> </a>
+                                <span><%= listaPosteos[i].comentarios.texto%></span>
+                            </li>
+                            
+                            <a href="/post/detallePost">Ver más...</a>
+                        </ul>
+                    </div>
+                </article>
+            <% } %>
+            
+            
+
+
+
+
+
+
+
+
+
+            
+>>>>>>> d1580bef401ced0c1b9bb19658eb6065bfd9cc5c
         </section>    
     </main>
 

@@ -19,7 +19,7 @@ html {
 body {
     margin: 0;
     padding: 0;
-    color:#777
+    color:#777;
 }
 /* navigation */
 header {
@@ -35,7 +35,7 @@ header {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     padding: 10px 10px;
     border-bottom: 1px solid #ddd;
 }
@@ -83,6 +83,7 @@ main {
     align-items: center;
     padding: 100px 0;
     min-height: 600px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 .main-content {
@@ -103,7 +104,8 @@ main {
 .info-usuario,
 .post-reacciones,
 .post-comentarios {
-    padding: 10px 15px
+    padding: 10px 15px;
+    background-color: cornflowerblue;
 }
 .info-usuario {
     display: flex;
@@ -117,6 +119,8 @@ main {
     border-radius: 90%;
     padding: 1px;
     border: 2px solid chocolate;
+    height: 40px;
+    width: 40px;
 }
 .post-reacciones {
     display: flex;
@@ -148,6 +152,7 @@ main {
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
 .main-footer {
     position: fixed;
@@ -199,6 +204,8 @@ main {
     border-radius: 90%;
     padding: 1px;
     border: 2px solid chocolate;
+    height: 40px;
+    width: 40px;
 }
 .comment .text {
     font-size: 12px;
@@ -285,6 +292,8 @@ main {
 .profile {
     border-radius: 90%;
     border: 2px solid chocolate;
+    width: 100px;
+    height: 100px;
 }
 
 .user-detail .meta {
@@ -294,3 +303,30 @@ main {
     justify-content: space-between;
     width: 100%;
 }
+
+p{
+font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.logo{
+    font-family: 'Abril Fatface', cursive;
+}
+
+.main-header{
+    background-color: cornflowerblue;
+}
+
+.main-footer{
+    background-color: cornflowerblue;}
+
+.team{
+   font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: gold;
+}
+
+.navbar-right{
+font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+
+
