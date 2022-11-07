@@ -1,8 +1,13 @@
 // requires
+<<<<<<< HEAD
+const data = require('../data/index')
+
+=======
 const { usuariosByIdPosteo, usuarios } = require('../data/index');
 const data = require('../data/index')
 
 
+>>>>>>> d1580bef401ced0c1b9bb19658eb6065bfd9cc5c
 
 //metodos
 const usersController = {
