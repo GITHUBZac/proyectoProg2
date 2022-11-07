@@ -1,6 +1,6 @@
 module.exports = function(sequelize, dataType){
 
-    let alias = "comnetario";
+    let alias = "comentario";
 
     let cols = {
         
@@ -36,7 +36,7 @@ module.exports = function(sequelize, dataType){
 
     }
     let config = {
-        tableName:"Comments", 
+        tableName:"comentario", 
         timestamps: false,
 
     };
