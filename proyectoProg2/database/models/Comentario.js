@@ -1,6 +1,6 @@
 module.exports = function(sequelize, dataType){
 
-    let alias = "Comment";
+    let alias = "comentario";
 
     let cols = {
         
@@ -11,11 +11,12 @@ module.exports = function(sequelize, dataType){
             type: dataType.INTEGER,
         },
 
-        comment: {
+        comentario: {
             allowNule: false,
             type: dataType.STRING,
         },
         posteo_id:{
+            type: dataType.INTEGER,
             allowNule: false,
         },
         usuarios_id: {
@@ -33,30 +34,30 @@ module.exports = function(sequelize, dataType){
             type: dataType.DATE,
             field: "updated_at",
 
-        }
+        },
 
     }
     let config = {
-        tableName:"Comments", 
+        tableName:"comentario", 
         timestamps: false,
 
     };
 
     
 
-    const Comment=sequelize.define(alias, cols, config);
+    const comentario=sequelize.define(alias, cols, config);
     // alias: identifica al modelo --  cols: lo que contiene la tabla  --  config: nombre de la tabla
-    Comment.associate = (db) => {
-        Comment.belongsTo(db.Product, {// comentario pertenece al producto
+    comentario.associate = (db) => {
+        comentario.belongsTo(db.Product, {// comentario pertenece al producto
             as: "producto",
             foreignKey: "product_id"
         });
-        Comment.belongsTo(db.User, { // comentario pertence a usuario
+        comentario.belongsTo(db.User, { // comentario pertence a usuario
             as: "usuario",
             foreignKey: "user_id"
         });
 
     };
 
-    return Comment;
+    return comentario;
 }
