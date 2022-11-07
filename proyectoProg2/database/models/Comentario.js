@@ -32,7 +32,6 @@ module.exports = function(sequelize, dataType){
             allowNule: false,
             type: dataType.DATE,
             field: "updated_at",
-
         }
 
     }
