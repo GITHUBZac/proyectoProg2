@@ -1,6 +1,6 @@
 module.exports = function(sequelize, dataType){
 
-    let alias = "comentario";
+    let alias = "comnetario";
 
     let cols = {
         
@@ -11,12 +11,11 @@ module.exports = function(sequelize, dataType){
             type: dataType.INTEGER,
         },
 
-        comentario: {
+        comment: {
             allowNule: false,
             type: dataType.STRING,
         },
         posteo_id:{
-            type: dataType.INTEGER,
             allowNule: false,
         },
         usuarios_id: {
@@ -33,12 +32,11 @@ module.exports = function(sequelize, dataType){
             allowNule: false,
             type: dataType.DATE,
             field: "updated_at",
-
-        },
+        }
 
     }
     let config = {
-        tableName:"comentario", 
+        tableName:"Comments", 
         timestamps: false,
 
     };
