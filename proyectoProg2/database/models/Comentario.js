@@ -45,7 +45,7 @@ module.exports = function(sequelize, dataType){
 
     
 
-    const comentario=sequelize.define(alias, cols, config);
+    const comentario = sequelize.define(alias, cols, config);
     // alias: identifica al modelo --  cols: lo que contiene la tabla  --  config: nombre de la tabla
     comentario.associate = (db) => {
         comentario.belongsTo(db.Product, {// comentario pertenece al producto
