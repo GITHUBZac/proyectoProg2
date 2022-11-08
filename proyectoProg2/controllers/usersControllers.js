@@ -3,7 +3,6 @@ const { usuariosByIdPosteo, usuarios } = require('../data/index');
 const data = require('../data/index')
 
 
-
 //metodos
 const usersController = {
       editarPerfil: function(req, res, next) {
