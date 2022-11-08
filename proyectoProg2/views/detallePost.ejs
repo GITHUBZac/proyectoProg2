@@ -9,8 +9,13 @@
         <div class="post-detail container">
             <section class="center main-content post">
                 <div class="info-usuario">
+<<<<<<< HEAD
+                    <img src="https://via.placeholder.com/40" alt="">
+                    <p><a href="/users/detalleUsuario">Nombre de usuario</a></p>
+=======
                     <img src="<%= posteo.foto %> " alt="">
                     <p><a href="/users/detalleUsuario/<%= posteo.id_usuario %> "><%= posteo.nombre %></a></p>
+>>>>>>> d1580bef401ced0c1b9bb19658eb6065bfd9cc5c
                 </div>
                 <img class="photo" src="<%= posteo.post %>" alt="">
             </section>
@@ -22,53 +27,19 @@
                         <button type="submit">Comentar</button>
                     </form>
                     <div>
-                        <article class="comment">
-                            <img src="https://via.placeholder.com/40" alt="">
-                            <section class="content">
-                                <a class="user" href="/users/detalleUsuario">Nombre</a>
-                                <span class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel aspernatur temporibus maxime voluptas</span>
-                            </section>
-                        </article>
-                        <article class="comment">
-                            <img src="https://via.placeholder.com/40" alt="">
-                            <section class="content">
-                                <a class="user" href="/users/detalleUsuario">Nombre</a>
-                                <span class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel aspernatur temporibus maxime
-                                    voluptas</span>
-                            </section>
-                        </article>
-                        <article class="comment">
-                            <img src="https://via.placeholder.com/40" alt="">
-                            <section class="content">
-                                <a class="user" href="/users/detalleUsuario">Nombre</a>
-                                <span class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel aspernatur temporibus maxime
-                                    voluptas</span>
-                            </section>
-                        </article>
-                        <article class="comment">
-                            <img src="https://via.placeholder.com/40" alt="">
-                            <section class="content">
-                                <a class="user" href="/users/detalleUsuario">Nombre</a>
-                                <span class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel aspernatur temporibus maxime
-                                    voluptas</span>
-                            </section>
-                        </article>
-                        <article class="comment">
-                            <img src="https://via.placeholder.com/40" alt="">
-                            <section class="content">
-                                <a class="user" href="/users/detalleUsuario">Nombre</a>
-                                <span class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel aspernatur temporibus maxime
-                                    voluptas</span>
-                            </section>
-                        </article>
-                        <article class="comment">
-                            <img src="https://via.placeholder.com/40" alt="">
-                            <section class="content">
-                                <a class="user" href="/users/detalleUsuario">Nombre</a>
-                                <span class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel aspernatur temporibus maxime
-                                    voluptas</span>
-                            </section>
-                        </article>
+
+
+                        <% for( let i = 0; i < comentarios.length; i++ ) { %>
+                            <article class="comment">
+                                <img src="<%= comentarios[i].foto %> " alt="">
+                                <section class="content">
+                                    <a class="user" href="/users/detalleUsuario/<%= comentarios[i].id_usuario %> "><%= comentarios[i].nombre %></a>
+                                    <span class="text"><%= comentarios[i].comentario %></span>
+                                </section>
+                            </article>
+                        <% } %>
+                        
+                        
                     </div>
                 </section>
             </section>
