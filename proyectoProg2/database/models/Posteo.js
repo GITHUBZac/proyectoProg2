@@ -10,7 +10,7 @@ module.exports = function (sequelize, dataTypes) {
         id_usuarios: {
             type: dataTypes.INTEGER
         },  
-       image_name:{
+       nombre_imagen:{
         type: dataTypes.STRING
        },
        pie_post:{
