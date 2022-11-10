@@ -9,6 +9,6 @@ router.get('/editarPerfil/:id',usersController.editarPerfil  );
 router.get('/login',usersController.login  );
 router.get('/miPerfil',usersController.miPerfil  );
 router.get('/registracion',usersController.registracion  );
-router.get('/detalleUsuario',usersController.detalleUsuario  );
+router.get('/detalleUsuario/:id',usersController.detalleUsuario  );
 
 module.exports = router;
