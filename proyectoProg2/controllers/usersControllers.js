@@ -1,14 +1,6 @@
 // requires
-<<<<<<< HEAD
-const data = require('../data/index')
-
-=======
 const { usuariosByIdPosteo, usuarios } = require('../data/index');
 const data = require('../data/index')
-
-
->>>>>>> d1580bef401ced0c1b9bb19658eb6065bfd9cc5c
-
 //metodos
 const usersController = {
       editarPerfil: function(req, res, next) {
@@ -23,17 +15,11 @@ const usersController = {
     registracion: function(req, res, next) {
         res.render('registracion');
       },
-
       detalleUsuario: function(req, res, next) {
         let idPosteo = req.params.id;
-
         let postEncontrado = data.postsByID(idPosteo);
-
         let comentariosEncontrado = data.comentarioByIdPosteo(idPosteo);
-
         let usuario = data.usuarios.find(usuario=>usuario.id_usuario==idPosteo);
-
-
         res.render('detalleUsuario',{posteo : postEncontrado,
           comentarios: comentariosEncontrado, 
           usuario: usuario,
