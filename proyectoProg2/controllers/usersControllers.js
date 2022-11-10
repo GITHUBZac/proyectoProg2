@@ -13,25 +13,47 @@ const userController = {
     },
     /* Guardar una peli */
     store: (req, res) => {
-        /* return res.send(req.body) */
-        let usuarioAGuardar = req.body;
-        /* luego la tengo que guardar en la DB */
-        let user ={
-            name:usuarioAGuardar.name,
-            email:usuarioAGuardar.email,
-            password:bycript.hashSync(usuarioAGuardar.password,10)
+    /* Es hacer una validacion */
+        let errors = {};
+
+        if (req.body.name == "") {
+            errors.message = "El campo nombre esta vacio";
+            res.locals.errors = errors;
+            return res.render('registerUser');
+
+        }else if(req.body.email == ""){
+            errors.message = "El campo email esta vacio";
+            res.locals.errors = errors;
+            return res.render('registerUser');
+        } else {
+
+            let usuarioAGuardar = req.body;
+            let imgPefil = req.file.filename;
+            /* luego la tengo que guardar en la DB */
+            let user ={
+                name:usuarioAGuardar.name,
+                email:usuarioAGuardar.email,
+                password:bycript.hashSync(usuarioAGuardar.password,10),
+                img : imgPefil
+            }
+            User.create(user)
+            .then((result)=>{
+                return res.redirect('/users/login')
+            })
+            .catch((err)=>{
+                return console.log(err)
+            })
         }
-        User.create(user)
-        .then((result)=>{
-            return res.redirect('/users/login')
-        })
-        .catch((err)=>{
-            return console.log(err)
-        })
-        
+
     },
     login:(req,res)=>{
-        return res.render('login')
+
+        if (req.session.user != undefined) {
+            return res.redirect('/movies')
+        } else {
+            return res.render('login')
+        }
+        
     },
     loginPost:(req,res)=>{
         let info = req.body;
@@ -43,15 +65,33 @@ const userController = {
             if(result!=null){
                 let passEncriptada= bycript.compareSync(info.password,result.password);
                 if(passEncriptada){
-                    return res.redirect('/movies')
+                    req.session.user = result.dataValues;
+
+                    if (info.rememberme != undefined) {
+                        res.cookie('userId', result.dataValues.id, {maxAge: 1000 * 60 * 10})
+                    }
+
+                    return res.redirect('/movies');
                 }else{
-                    return res.send('La clave no coincide')
+                    return res.send('La clave no coincide');
                 }
             }
         })
         .catch(error=>console.log(error))
        
-    }
+    },
+    logout:(req,res)=>{
+        /* Destruir la session */
+        req.session.destroy();
+
+        /* Destruir la cookie */
+        res.clearCookie('userId');
+
+        res.locals.user = undefined;
+
+        return res.render('login');
+    },
+
 
 
 }
