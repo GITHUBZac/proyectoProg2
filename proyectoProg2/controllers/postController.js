@@ -5,35 +5,35 @@ const movie = db.Movie;
 const op = db.Sequelize.Op;
 
 /* Desarrollar */
-const movieController = {
-    index : function(req, res) {
+const postController = {
+    index: function (req, res) {
 
-            let criterios = {
-               /*  where : [{awards : 1}, {length : 120}],
-                order : [["title", "DESC"]],
-                limit : 2 */
-            }
+        let criterios = {
+            /*  where : [{awards : 1}, {length : 120}],
+             order : [["title", "DESC"]],
+             limit : 2 */
+        }
 
-            movie.findAll(criterios)
+        movie.findAll(criterios)
             .then((result) => {
                 /* #nota: Crear Contador */
 
 
-                 /* #nota: Enviar dato a la vista con la clave contador*/
+                /* #nota: Enviar dato a la vista con la clave contador*/
 
 
-                return res.render("movies", {peliculas : result})
+                return res.render("movies", { peliculas: result })
             });
-        
+
     },
 
-    show: (req, res) =>{
+    show: (req, res) => {
         let id = req.params.id;
 
         let relaciones = {
-            include : [
+            include: [
                 {
-                    all : true,
+                    all: true,
                     nested: true
                 }
                 // {association:'genre'},
@@ -41,38 +41,38 @@ const movieController = {
 
             ]
         };
-          
+
         movie.findByPk(id, relaciones)
-        .then((result) => {
-            console.log(result.actors);
-            return res.render("detalleMovies", {movie : result})
-        })
-        .catch((err) =>{
-            return res.redirect("/")
-        });
+            .then((result) => {
+                console.log(result.actors);
+                return res.render("detalleMovies", { movie: result })
+            })
+            .catch((err) => {
+                return res.redirect("/")
+            });
     },
 
-    showOne : (req, res) => {
+    showOne: (req, res) => {
         let busqueda = req.query.pelicula;
 
         let criterios = {
-            where : [
+            where: [
                 /* {title: busqueda} */
-                {title: {[op.like] : "%" + busqueda + "%"}}
+                { title: { [op.like]: "%" + busqueda + "%" } }
             ]
         }
 
         movie.findOne(criterios)
-        .then((result) => {
-            return res.render("detalleMovies", {movie : result})
-        })
-        .catch((err) =>{
-            return res.redirect("/")
-        });
-        
+            .then((result) => {
+                return res.render("detalleMovies", { movie: result })
+            })
+            .catch((err) => {
+                return res.redirect("/")
+            });
+
     },
     /* Mostrar el form de la peli */
-    create : (req, res) =>{
+    create: (req, res) => {
         return res.render("registerMovie");
     },
     /* Guardar una peli */
@@ -83,45 +83,85 @@ const movieController = {
 
         return res.redirect("/movies");
     },
-    update:(req,res)=>{
+    update: (req, res) => {
         let id = req.params.id;
         movie.findByPk(id)
-        .then((result)=>{
-            return res.render('updateMovie',{movie:result.dataValues})
-        })
-        .catch(erro=>console.log(erro))
-        
+            .then((result) => {
+                return res.render('updateMovie', { movie: result.dataValues })
+            })
+            .catch(erro => console.log(erro))
+
     },
-    updatePost:(req,res)=>{
+    updatePost: (req, res) => {
         let filtro = {
-            where:[{id:req.body.id}]
+            where: [{ id: req.body.id }]
         }
         let info = req.body;
 
-        movie.update(info,filtro)
-        .then((result)=>{
-            return res.redirect('/movies')
-        })
-        .catch(()=>{
-            return res.redirect('/')
-        })
+        movie.update(info, filtro)
+            .then((result) => {
+                return res.redirect('/movies')
+            })
+            .catch(() => {
+                return res.redirect('/')
+            })
     },
-destroy:(req,res)=>{
-    let id = req.body.id;
-    let filtro = {
-        where:[{
-            id:id
-        }]
-    }
-    movie.destroy(filtro)
-    .then((result)=>{
-        return res.redirect('/movies')
-    })
-    .catch((err)=>{
-        console.log(err);
-        return res.redirect('/')
-    })
-}
+    destroy: (req, res) => {
+        let id = req.body.id;
+        let filtro = {
+            where: [{
+                id: id
+            }]
+        }
+        movie.destroy(filtro)
+            .then((result) => {
+                return res.redirect('/movies')
+            })
+            .catch((err) => {
+                console.log(err);
+                return res.redirect('/')
+            })
+    },
+    nuevoPost:(req,res)=>{
+        if(req.session.user) {
+            res.render('agregarPost')
+        }
+        else{
+            res.redirect('/users/login')
+        }
+    },
+    crearPost:(req,res)=>{
+
+
+        let errors = {};
+
+        if (req.body.texto == "") {
+            errors.message = "Ingresar texto del post";
+            res.locals.errors = errors;
+            return res.render('agregarPost');
+        }
+        else if (req.file == undefined) {
+            errors.message = "Ingresar una foto";
+            res.locals.errors = errors;
+            return res.render('agregarPost');
+        }
+        else{
+           db.Posteo.create({
+            usuario_id: req.session.user.id,
+            imagen: req.file.filename,
+            comentario: req.body.texto
+           })
+           .then(()=>{
+                res.redirect('/');
+           })
+           .catch((error)=>{
+            console.log(error);
+           })
+        }
+    },
+    detallePost:(req,res)=>{
+
+    },
 
 
 }
@@ -129,4 +169,4 @@ destroy:(req,res)=>{
 
 /* Exportar */
 
-module.exports = movieController;
+module.exports = postController;
