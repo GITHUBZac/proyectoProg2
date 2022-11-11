@@ -1,29 +1,172 @@
-// requires
+/* Importar */
+const db = require('../database/models');
+const movie = db.Movie;
 
-const data = require("../data");
+const op = db.Sequelize.Op;
 
-//metodos
+/* Desarrollar */
 const postController = {
-    nuevoPost: function(req, res, next) {
-        res.render('agregarPost');
-      },
-    detallePost: function(req, res, next) {
-        let idPosteo = req.params.id;
+    index: function (req, res) {
 
-        let postEncontrado = data.postsByID(idPosteo);
+        let criterios = {
+            /*  where : [{awards : 1}, {length : 120}],
+             order : [["title", "DESC"]],
+             limit : 2 */
+        }
 
-        let comentariosEncontrado = data.comentarioByIdPosteo(idPosteo);
+        movie.findAll(criterios)
+            .then((result) => {
+                /* #nota: Crear Contador */
 
 
-        
+                /* #nota: Enviar dato a la vista con la clave contador*/
 
-        res.render('detallePost', {posteo : postEncontrado,
-                                  comentarios: comentariosEncontrado,
-                                  
-                                  
-              });
-      }
+
+                return res.render("movies", { peliculas: result })
+            });
+
+    },
+
+    show: (req, res) => {
+        let id = req.params.id;
+
+        let relaciones = {
+            include: [
+                {
+                    all: true,
+                    nested: true
+                }
+                // {association:'genre'},
+                // {association:'actors'}
+
+            ]
+        };
+
+        movie.findByPk(id, relaciones)
+            .then((result) => {
+                console.log(result.actors);
+                return res.render("detalleMovies", { movie: result })
+            })
+            .catch((err) => {
+                return res.redirect("/")
+            });
+    },
+
+    showOne: (req, res) => {
+        let busqueda = req.query.pelicula;
+
+        let criterios = {
+            where: [
+                /* {title: busqueda} */
+                { title: { [op.like]: "%" + busqueda + "%" } }
+            ]
+        }
+
+        movie.findOne(criterios)
+            .then((result) => {
+                return res.render("detalleMovies", { movie: result })
+            })
+            .catch((err) => {
+                return res.redirect("/")
+            });
+
+    },
+    /* Mostrar el form de la peli */
+    create: (req, res) => {
+        return res.render("registerMovie");
+    },
+    /* Guardar una peli */
+    store: (req, res) => {
+        /* return res.send(req.body) */
+        let peliculaAGuardar = req.body;
+        /* luego la tengo que guardar en la DB */
+
+        return res.redirect("/movies");
+    },
+    update: (req, res) => {
+        let id = req.params.id;
+        movie.findByPk(id)
+            .then((result) => {
+                return res.render('updateMovie', { movie: result.dataValues })
+            })
+            .catch(erro => console.log(erro))
+
+    },
+    updatePost: (req, res) => {
+        let filtro = {
+            where: [{ id: req.body.id }]
+        }
+        let info = req.body;
+
+        movie.update(info, filtro)
+            .then((result) => {
+                return res.redirect('/movies')
+            })
+            .catch(() => {
+                return res.redirect('/')
+            })
+    },
+    destroy: (req, res) => {
+        let id = req.body.id;
+        let filtro = {
+            where: [{
+                id: id
+            }]
+        }
+        movie.destroy(filtro)
+            .then((result) => {
+                return res.redirect('/movies')
+            })
+            .catch((err) => {
+                console.log(err);
+                return res.redirect('/')
+            })
+    },
+    nuevoPost:(req,res)=>{
+        if(req.session.user) {
+            res.render('agregarPost')
+        }
+        else{
+            res.redirect('/users/login')
+        }
+    },
+    crearPost:(req,res)=>{
+
+
+        let errors = {};
+
+        if (req.body.texto == "") {
+            errors.message = "Ingresar texto del post";
+            res.locals.errors = errors;
+            return res.render('agregarPost');
+        }
+        else if (req.file == undefined) {
+            errors.message = "Ingresar una foto";
+            res.locals.errors = errors;
+            return res.render('agregarPost');
+        }
+        else{
+           db.Posteo.create({
+            usuario_id: req.session.user.id,
+            imagen: req.file.filename,
+            comentario: req.body.texto
+           })
+           .then(()=>{
+                res.redirect('/');
+           })
+           .catch((error)=>{
+            console.log(error);
+           })
+        }
+    },
+    detallePost:(req,res)=>{
+
+    },
+
+
 }
 
-//exportacion
-module.exports = postController
+
+/* Exportar */
+
+module.exports = postController;

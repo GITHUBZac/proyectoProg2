@@ -40,14 +40,20 @@ module.exports = function (sequelize, dataTypes){
         dni :{
             type: dataTypes.INTEGER,
             allowNull:false,
-
-        }
-
+        },
+        // created_at: {
+        //     type: dataTypes.DATE,
+        //     allowNull: true,
+        // },
+        // updated_at: {
+        //     type: dataTypes.DATE,
+        //     allowNull: true,
+        // }
     }
 
     let config = {
-        tableName : "usuario",
-        timestamps:true, //Aclareción en caso de no explicitar created_at, deleted_at y updated_at
+        tableName : "usuarios",
+        timestamps:false, //Aclareción en caso de no explicitar created_at, deleted_at y updated_at
         underscored: true, //Aclareción en caso que los timestamps usen guiones bajos en lugar de camelCase.
     };
 
