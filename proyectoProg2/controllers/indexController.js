@@ -12,5 +12,5 @@ const indexController = {
       }
 }
 
-//exportacion
+//exportacion.
 module.exports = indexController
