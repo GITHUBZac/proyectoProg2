@@ -2,10 +2,10 @@ module.exports={
   "development": {
     "username": "root",
     "password": "root",
-    "database": "database_development",
+    "database": "proyectoProg",
     "host": "127.0.0.1",
     "dialect": "mysql",
-    "port": 3306
+    "port": 3000
   }
   
   

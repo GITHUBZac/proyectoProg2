@@ -39,7 +39,7 @@ foreign key (usuario_id) references usuarios(id)
 
 create table seguidores(
 id int unsigned primary key not null auto_increment,
-seguido_idcreatedat int unsigned not null ,
+seguido_id int unsigned not null ,
 seguidor_id int unsigned not null ,
 created_at timestamp default current_timestamp,
 updated_at timestamp default current_timestamp on update current_timestamp,
