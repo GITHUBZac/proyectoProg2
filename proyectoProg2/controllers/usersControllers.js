@@ -60,7 +60,7 @@ const userController = {
                 dni: req.body.DNI
             })
             .then((usuario) => {
-                res.redirect('users/login')
+                res.redirect('/users/login')
             })
             .catch((error)=>{
                 console.log(error);
