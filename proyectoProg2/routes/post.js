@@ -4,6 +4,7 @@ var postController = require('../controllers/postController');
 
 let multer = require('multer');
 let path = require('path');
+const { Router } = require('express');
 
 /* Configurar multer */
 let storage = multer.diskStorage({
@@ -24,4 +25,5 @@ router.post('/nuevoPost', upload.single('imagen'), postController.crearPost);
 router.post('/detallePost', postController.detallePost);
 router.get('/detallePost/:id', postController.detallePost);
 
+router.get("/resultado-busqueda/:q",postController.busquedaPost)
 module.exports = router;

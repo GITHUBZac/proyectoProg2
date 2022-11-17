@@ -1,7 +1,7 @@
 /* Importar */
 const db = require('../database/models');
 const movie = db.Movie;
-
+const Posteos = db.Posteo // guardando el retorno del modelo
 const op = db.Sequelize.Op;
 
 /* Desarrollar */
@@ -162,6 +162,20 @@ const postController = {
     detallePost:(req,res)=>{
 
     },
+        // crear un metodo del controlador posteo
+        // para identificar la busqueda del usuario.
+
+    busquedaPost: (req,res)=> {
+        let busqueda = req.params.q
+        console.log(busqueda)
+        Posteos.findAll ()
+        .then((listaposteos)=>{
+            res.send(listaposteos)
+        })
+        .catch((error)=>{
+            console.log(error);
+           })
+    }
 
 
 }
