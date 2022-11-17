@@ -22,7 +22,10 @@ let upload = multer({storage: storage});
 router.get('/nuevoPost', postController.nuevoPost);
 router.post('/nuevoPost', upload.single('imagen'), postController.crearPost);
 
-router.post('/detallePost', postController.detallePost);
+/* aqui guarda un posteo */
+router.post('/guardarPost:', postController.detallePost);
+
+/* Buscar detalle del posteos numero :id */
 router.get('/detallePost/:id', postController.detallePost);
 
 router.get("/resultado-busqueda/:q",postController.busquedaPost)

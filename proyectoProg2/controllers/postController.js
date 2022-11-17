@@ -159,8 +159,16 @@ const postController = {
            })
         }
     },
+    guardarPost:(req,res)=>{
+
+    },
     detallePost:(req,res)=>{
 
+        let idPosteo = req.params.id;
+        /* ir a buscar el posteo con el id idPosteo */
+
+
+        return res.render('detallePost', {})
     },
         // crear un metodo del controlador posteo
         // para identificar la busqueda del usuario.
