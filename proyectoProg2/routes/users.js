@@ -26,6 +26,6 @@ router.get('/logout',usersController.logout);
 router.get('/miPerfil',usersController.miPerfil  );
 router.get('/registracion',usersController.registracion  );
 router.post('/registracion', upload.single('foto'), usersController.store );
-router.get('/detalleUsuario/:id',usersController.detalleUsuario );
+router.get('/detalleUsuario/:id',usersController.detalleUsuario  );
 
 module.exports = router;
