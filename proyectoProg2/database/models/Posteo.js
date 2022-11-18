@@ -16,14 +16,6 @@ module.exports = function (sequelize, dataTypes) {
         comentario: {
             type: dataTypes.STRING
         },
-        // createdAt: {
-        //     type: dataTypes.DATE,
-        //     allowNull: true,
-        // },
-        // updatedAt: {
-        //     type: dataTypes.DATE,
-        //     allowNull: true,
-        // }
     }
 
     let config = {
@@ -35,14 +27,14 @@ module.exports = function (sequelize, dataTypes) {
     let Posteo = sequelize.define(alias, cols, config);
 
     Posteo.associate = function (models) {
-        // Posteo.hasMany(models.Comentario, {
-        //     as: 'comentario',
-        //     foreignKey: 'id_posteos',
-        // })
-        // Posteo.belongsTo(models.Usuario, {
-        //     as: 'usuario',
-        //     foreignKey: 'id_usuarios',
-        // })
+        Posteo.hasMany(models.Comentario, {
+            as: 'comentarios',
+            foreignKey: 'posteo_id',
+        })
+        Posteo.belongsTo(models.Usuario, {
+            as: 'usuario',
+            foreignKey: 'usuario_id',
+        })
     }
     return Posteo;
 }

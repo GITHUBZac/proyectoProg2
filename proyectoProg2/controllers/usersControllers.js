@@ -51,7 +51,7 @@ const userController = {
             return res.render('registracion');
         }
         else{
-            db.usuario.create({
+            db.Usuario.create({
                 nombre: req.body.username,
                 mail: req.body.email,
                 contrasenia: bycript.hashSync(req.body.password, 12),
@@ -80,7 +80,7 @@ const userController = {
     },
     signin:(req,res)=>{
        
-        db.usuario.findOne({
+        db.Usuario.findOne({
             where:{
                 mail: req.body.email
             }
@@ -122,12 +122,38 @@ const userController = {
     },
     miPerfil:(req, res)=>{
 
+        db.Usuario.findOne({
+            include: {
+                all:true,
+                nested: true
+            },
+            where: {
+                id: req.session.user.id
+            }
+        })
+        .then(perfil => {
+            res.render('miPerfil', {perfil: perfil});
+        })
+
     },
     registracion:(req, res)=>{
         res.render('registracion');
     },
     detalleUsuario:(req, res)=>{
-
+        db.Usuario.findOne({
+            include: [
+                {
+                    all:true,
+                    nested: true
+                }
+            ],
+            where: {
+                id: req.params.id
+            }
+        })
+        .then(detalle => {
+            res.render('detalleUsuario', {detalle: detalle});
+        })
     }
 
 }

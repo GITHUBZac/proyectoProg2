@@ -1,6 +1,6 @@
 module.exports = function (sequelize, dataTypes){
     
-    let alias = 'usuario'; //Este alias se busca como nombre en de la tabla en plural dentro de la base de datos.
+    let alias = 'Usuario'; //Este alias se busca como nombre en de la tabla en plural dentro de la base de datos.
 
     let cols = {
         id: {
@@ -41,14 +41,6 @@ module.exports = function (sequelize, dataTypes){
             type: dataTypes.INTEGER,
             allowNull:false,
         },
-        // created_at: {
-        //     type: dataTypes.DATE,
-        //     allowNull: true,
-        // },
-        // updated_at: {
-        //     type: dataTypes.DATE,
-        //     allowNull: true,
-        // }
     }
 
     let config = {
@@ -57,8 +49,33 @@ module.exports = function (sequelize, dataTypes){
         underscored: true, //Aclareción en caso que los timestamps usen guiones bajos en lugar de camelCase.
     };
 
-    const usuario = sequelize.define(alias, cols, config);
+    const Usuario = sequelize.define(alias, cols, config);
 
-    return usuario;
+    Usuario.associate = function (models) {
+        Usuario.hasMany(models.Posteo, {
+            as: 'posteos',
+            foreignKey: 'usuario_id',
+        })
+
+        Usuario.belongsToMany(models.Usuario, {
+            as: 'misSeguidores',
+            through: 'seguidores',
+            foreignKey: 'seguido_id',
+            otherKey: 'seguidor_id',
+            timestamps: true,
+            underscored: true
+        })
+
+        Usuario.belongsToMany(models.Usuario, {
+            as: 'misSeguidos',
+            through: 'seguidores',
+            foreignKey: 'seguidor_id',
+            otherKey: 'seguido_id',
+            timestamps: true,
+            underscored: true
+        })
+    }
+
+    return Usuario;
 
 }

@@ -1,15 +1,25 @@
 // requires
-const data = require('../data/index')
-
+const db = require('../database/models');
+const Posteos = db.Posteo 
 
 //metodos
 const indexController = {
-    index: function(req, res, next) {
-        res.render('index', {listaPosteos: data.posteos});
+  index: function (req, res, next) {
+    Posteos.findAll({
+      include: {
+        all: true,
+        nested: true
       },
-    busqueda: function(req, res, next) {
-        res.render('resultadoBusqueda');
-      }
+      order: [['created_at', 'DESC']]
+    })
+    .then((listaposteos) => {
+      res.render('index', { listaposteos: listaposteos });
+    })
+    .catch((error) => {
+      console.log(error);
+    })
+  }
+ 
 }
 
 //exportacion.

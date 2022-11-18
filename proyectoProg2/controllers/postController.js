@@ -106,22 +106,30 @@ const postController = {
                 return res.redirect('/')
             })
     },
-    destroy: (req, res) => {
-        let id = req.body.id;
-        let filtro = {
-            where: [{
-                id: id
-            }]
-        }
-        movie.destroy(filtro)
-            .then((result) => {
-                return res.redirect('/movies')
-            })
-            .catch((err) => {
-                console.log(err);
-                return res.redirect('/')
-            })
+
+    eliminarPost: (req, res) => {
+
+        let id = req.params.id;
+
+        Posteos.destroy({
+            where: [
+                {
+                    id: id
+                },
+                {
+                    usuario_id: req.session.user.id
+                }
+            ]
+        })
+        .then((result) => {
+            return res.redirect('/')
+        })
+        .catch((err) => {
+            return res.redirect('/')
+        })
+       
     },
+
     nuevoPost:(req,res)=>{
         if(req.session.user) {
             res.render('agregarPost')
@@ -163,26 +171,41 @@ const postController = {
 
     },
     detallePost:(req,res)=>{
-
         let idPosteo = req.params.id;
-        /* ir a buscar el posteo con el id idPosteo */
+        db.Posteo.findOne({
+            include: {
+                all: true,
+                nested: true
+            },
+            where: {
+                id: idPosteo
+            },
+        })
+        .then(posteo => {
+            return res.render('detallePost', {posteo: posteo})
+        })
 
-
-        return res.render('detallePost', {})
     },
-        // crear un metodo del controlador posteo
-        // para identificar la busqueda del usuario.
 
     busquedaPost: (req,res)=> {
-        let busqueda = req.params.q
-        console.log(busqueda)
-        Posteos.findAll ()
+        let busqueda = req.query.busqueda;
+
+        Posteos.findAll ({
+            include: {
+                all: true,
+                nested: true
+            },
+            where: {
+                comentario: {[op.like] : "%" + busqueda + "%"}
+            },
+            order:[['created_at', 'DESC']]
+        })
         .then((listaposteos)=>{
-            res.send(listaposteos)
+            res.render('resultadoBusqueda', {listaposteos: listaposteos});
         })
         .catch((error)=>{
             console.log(error);
-           })
+        })
     }
 
 

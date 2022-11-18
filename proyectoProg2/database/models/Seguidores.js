@@ -1,6 +1,6 @@
 module.exports = function (sequelize, dataTypes){
     
-    let alias = 'seguidores'; //Este alias se busca como nombre en de la tabla en plural dentro de la base de datos.
+    let alias = 'Seguidores'; //Este alias se busca como nombre en de la tabla en plural dentro de la base de datos.
 
     let cols = {
         id: {
@@ -35,8 +35,8 @@ module.exports = function (sequelize, dataTypes){
         underscored: true, //Aclareción en caso que los timestamps usen guiones bajos en lugar de camelCase.
     };
 
-    const seguidores = sequelize.define(alias, cols, config);
+    const Seguidores = sequelize.define(alias, cols, config);
 
-    return seguidores;
+    return Seguidores;
 
 }
