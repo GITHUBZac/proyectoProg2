@@ -9,31 +9,28 @@
     <main>
         <div class="user-detail container">
             <section class="top main-content">
-                <img class="profile" src="<%= usuario.foto %> " alt="">
+                <img class="profile" src="/img/usuarios/<%= detalle.img %> " alt="">
                 <div class="info-usuario">
-                    <p><%= usuario.nombre %> </p> 
-                    <a class="follow" href="">seguir</a>
+                    <p><%= detalle.nombre %> </p> 
+                    <a class="follow" href="/users/editarPerfil/0"><i class="fa-solid fa-user-gear"></i></a>
                     <ul class="meta">
-                        <li> <%= usuario.posteos %>  </li>
-                        <li> <%= usuario.seguidos %>  </li>
-                        <li> <%= usuario.seguidores %>  </li>
+                        <li>Posteos: <%= detalle.posteos.length %> </li>
+                        <li>Seguidores: <%= detalle.misSeguidores.length %> </li>
+                        <li>Seguidos: <%= detalle.misSeguidos.length %> </li>
                     </ul>
                 </div>
             </section>
 
             <section class="bottom">
-                <% for (let i =0;i<posteo.length;i++){ %> 
+                <% for(let i = 0; i < detalle.posteos.length; i++) { %>
                 <article class="post">
-                    <a href="/posts/detallePost">
-                        <img src="<%= posteo[i].post %> " alt="">
+                    <a href="/post/detallePost/<%= detalle.posteos[i].id %> ">
+                        <img src="/img/post/<%= detalle.posteos[i].imagen %> " alt="">
+                        <p><%= detalle.posteos[i].comentario %> </p>
                     </a>
-                    
                 </article>
-                <% } %> 
-                
+                <% } %>
             </section>
-            
-            
         </div>
     </main>
 
