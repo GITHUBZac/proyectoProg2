@@ -1,19 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <%- include('./partials/head')  %> 
+<%- include('./partials/head') %>
 
-<body>
-    <%- include('./partials/header')  %> 
+    <body>
+        <%- include('./partials/header') %>
+            <main>
+                <section class="center main-content">
+                    <h1>Resultados de búsqueda.</h1>
 
-    <main>
-        <section class="center main-content">
-        <h1>Resultados de búsqueda.</h1>
-        <p>Construir la vista.</p>
-        </section>
-    </main>
-    <%- include('./partials/footer')  %> 
+                    <% if(listaposteos.length === 0) { %>
+                        <h4>No se encontró resultado para la busqueda</h4>
+                    <% } %>
 
-</body>
+                    <% for( let i=0; i < listaposteos.length; i++) { %>
+                        <article class="post">
+                            <div class="info-usuario ">
+                                <img src="/img/usuarios/<%= listaposteos[i].usuario.img %> " alt="">
+                                <h4>
+                                    <a href="/users/detalleUsuario/<%= listaposteos[i].usuario.id %> ">
+                                        <%= listaposteos[i].usuario.nombre %>
+                                    </a>
+                                </h4>
+                            </div>
+                            <div class="post-body">
+                                <a href="/post/detallePost/<%= listaposteos[i].id %>">
+                                    <img src="/img/post/<%= listaposteos[i].imagen %>" alt="">
+                                    <p>
+                                        <%= listaposteos[i].comentario %>
+                                    </p>
+                                </a>
+                            </div>
+                            <ul class="post-reacciones">
+                                <li>
+                                    <i class="fa-regular fa-heart"></i>
+                                </li>
+                                <li>
+                                    <i class="fa-regular fa-comment"></i>
+                                </li>
+                            </ul>
+                            <div class="post-comentarios">
+                                <h4>Comentarios</h4>
+                                <ul>
+                                    <% for(let j = 0; j < listaposteos[i].comentarios.length; j++ ) { %>
+                                    <li>
+                                        <a href="/users/detalleUsuario/<%= listaposteos[i].comentarios[j].usuario.id %>">
+                                            <%= listaposteos[i].comentarios[j].usuario.nombre %>
+                                        </a>
+                                        <span>
+                                            <%= listaposteos[i].comentarios[j].comentario %>
+                                        </span>
+                                    </li>
+                                    <% } %>
+                                    <a href="/post/detallePost/<%= listaposteos[i].id %>">Ver más...</a>
+                                </ul>
+                            </div>
+                        </article>
+                    <% } %>
+
+                </section>
+            </main>
+        <%- include('./partials/footer') %>
+
+    </body>
 
 </html>
