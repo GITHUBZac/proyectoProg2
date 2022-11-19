@@ -12,14 +12,14 @@
                     <img src="/img/usuarios/<%= posteo.usuario.img %>" alt="">
                     <p><a href="/users/detalleUsuario/<%= posteo.usuario.id %> "><%= posteo.usuario.nombre %></a></p>
                 </div>
-                <img class="photo" src="/img/posts/<%= posteo.imagen %>" alt="">
+                <img class="photo" src="/img/post/<%= posteo.imagen %>" alt="">
             </section>
             <section class="right">
                 <h4>Comentarios</h4>
                 <% if(locals.user) { %>
                     <% if(locals.user.id == posteo.usuario_id) { %>
                         <a href="/post/eliminarPost/<%= posteo.id %>">eliminar</a>
-                        <a href="/post/eliminarPost/<%= posteo.id %>">editar</a>
+                        <a href="/post/editarPost/<%= posteo.id %>">editar</a>
                     <% } %>
                 <% } %>
                 <section class="comments">
