@@ -40,7 +40,7 @@ app.use(function(req, res, next) {
   if (req.cookies.userId != undefined && req.session.user == undefined) {
       let idUsuarioEnCookie = req.cookies.userId;
 
-      db.usuario.findByPk(idUsuarioEnCookie)
+      db.Usuario.findByPk(idUsuarioEnCookie)
       .then((user) => {
 
         req.session.user = user.dataValues;
@@ -76,5 +76,6 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+
 
 module.exports = app;
