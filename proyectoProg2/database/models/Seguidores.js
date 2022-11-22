@@ -1,5 +1,5 @@
-module.exports = function (sequelize, dataTypes){
-    
+module.exports = function (sequelize, dataTypes) {
+
     let alias = 'Seguidores'; //Este alias se busca como nombre en de la tabla en plural dentro de la base de datos.
 
     let cols = {
@@ -7,16 +7,16 @@ module.exports = function (sequelize, dataTypes){
             autoIncrement: true,
             primaryKey: true,
             type: dataTypes.INTEGER,
-            allowNull:false,
+            allowNull: false,
         },
-        
-        seguido_id:{
+
+        seguido_id: {
             type: dataTypes.INTEGER,
-            allowNull:false,
+            allowNull: false,
         },
-        seguidor_id:{
+        seguidor_id: {
             type: dataTypes.INTEGER,
-            allowNull:false,
+            allowNull: false,
         },
 
         // created_at: {
@@ -30,9 +30,9 @@ module.exports = function (sequelize, dataTypes){
     }
 
     let config = {
-        tableName : "seguidores",
-        timestamps:false, //Aclareción en caso de no explicitar created_at, deleted_at y updated_at
-        underscored: true, //Aclareción en caso que los timestamps usen guiones bajos en lugar de camelCase.
+        tableName: "seguidores",
+        timestamps: false, //Aclaración en caso de no explicitar created_at, deleted_at y updated_at pero estos campos estan comentados
+        underscored: true, //Aclaración en caso que los timestamps usen guiones bajos en lugar de camelCase.
     };
 
     const Seguidores = sequelize.define(alias, cols, config);

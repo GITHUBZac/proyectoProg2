@@ -5,11 +5,11 @@ const bycript = require('bcryptjs');
 /* Desarrollar */
 const userController = {
    
-    /* Mostrar el form de la peli */
+    /* Mostrar el form del usuario */
     create : (req, res) =>{
         return res.render("registerUser");
     },
-    /* Guardar una peli */
+    /* Guardar un usuario */
     store: (req, res) => {
     /* Es hacer una validacion */
         let errors = {};

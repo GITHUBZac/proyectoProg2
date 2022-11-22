@@ -4,7 +4,7 @@ var postController = require('../controllers/postController');
 
 let multer = require('multer');
 let path = require('path');
-const { Router } = require('express');
+const  Router  = require('express');
 
 /* Configurar multer */
 let storage = multer.diskStorage({
@@ -12,8 +12,7 @@ let storage = multer.diskStorage({
         cb(null, path.join(__dirname, '../public/img/post'));
     },
     filename: function(req, file, cb) {
-        cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname));
-                /* foto-456456456456456.png  */             
+        cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname));       
     }
 });
 
