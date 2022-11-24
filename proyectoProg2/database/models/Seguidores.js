@@ -37,6 +37,27 @@ module.exports = function (sequelize, dataTypes) {
 
     const Seguidores = sequelize.define(alias, cols, config);
 
+    Seguidores.associate = function (models) {
+    Seguidores.belongsToMany(models.Usuario, {
+        as: 'usuariosSeguidores',
+        through: 'seguidores',
+        foreignKey: 'seguido_id',
+        otherKey: 'seguidor_id',
+        timestamps: true,
+        underscored: true
+    })
+
+    Seguidores.belongsToMany(models.Usuario, {
+        as: 'usuariosSeguidos',
+        through: 'seguidos',
+        foreignKey: 'seguidor_id',
+        otherKey: 'seguido_id',
+        timestamps: true,
+        underscored: true
+    })
+
+    }
+
     return Seguidores;
 
 }
